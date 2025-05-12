@@ -56,7 +56,7 @@
 .admin-edit:hover,
 .admin-delete:hover {
     opacity: 0.8;
-    color: #EF0D22;
+    color: #0366E9;
 }
 
 .admin-button {
@@ -65,7 +65,7 @@
 }
 
 .admin-add {
-    background: #EF0D22;
+    background: #0366E9;
     color: #FFF;
     font-size: 14px;
     padding: 8px 12px;
@@ -77,7 +77,7 @@
 }
 
 .admin-add:hover {
-    background: #c30016;
+    background: #024FB5;
 }
 
 .account-container {
@@ -125,12 +125,12 @@
 }
 
 .account-menu li.active a {
-    color: #EF0D22;
+    color: #0366E9;
     font-weight: bold;
 }
 
 .account-menu li.active a .icon {
-    stroke: #EF0D22;
+    stroke: #0366E9;
 }
 
 .account-content {

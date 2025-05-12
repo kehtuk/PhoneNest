@@ -61,7 +61,7 @@
 .order-btn {
     display: block;
     width: 100%;
-    background-color: #EF0D22;
+    background-color: #0366E9;
     color: #fff;
     padding: 14px;
     font-weight: bold;
@@ -74,7 +74,7 @@
 }
 
 .order-btn:hover {
-    background-color: #c90018;
+    background-color: #024FB5;
 }
 
 .checkout-summary {

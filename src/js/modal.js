@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (registerForm) {
             const phoneField = registerForm.querySelector("input[name='phone']");
             if (phoneField) {
-                phoneField.value = phoneField.value.replace(/\D+/g, "");
+                // phoneField.value = phoneField.value.replace(/\D+/g, "");
             }
 
             const formData = new FormData(registerForm);

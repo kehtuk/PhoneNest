@@ -25,8 +25,8 @@
 }
 
 .breadcrumbs a:hover {
-    color: #EF0D22;
-    text-decoration: underline #EF0D22;
+    color: #0366E9;
+    text-decoration: underline #0366E9;
 }
 
 .breadcrumbs span {
@@ -117,7 +117,7 @@
 }
 
 .social-icons a:hover {
-    background-color: #EF0D22;
+    background-color: #0366E9;
 }
 
 .social-icons img {

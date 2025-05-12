@@ -60,7 +60,7 @@
 
 .auth-button {
     width: 100%;
-    background: #EF0D22;
+    background: #0366E9;
     color: #FFF;
     border: none;
     padding: 12px;
@@ -73,7 +73,7 @@
 }
 
 .auth-button:hover {
-    background: #c90018;
+    background: #024FB5;
 }
 
 .modal-footer {
@@ -83,9 +83,9 @@
 
 .switch-to-login,
 .switch-to-register {
-    color: #EF0D22;
+    color: #0366E9;
     font-weight: bold;
-    text-decoration: underline #EF0D22;
+    text-decoration: underline #0366E9;
 }
 
 .modal-link:hover {

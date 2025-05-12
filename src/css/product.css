@@ -60,7 +60,7 @@
 }
 
 .add-to-cart {
-    background-color: #EF0D22;
+    background-color: #0366E9;
     color: #fff;
     padding: 16px 56px;
     font-size: 16px;
@@ -73,7 +73,7 @@
 }
 
 .add-to-cart:hover {
-    background-color: #c90018;
+    background-color: #024FB5;
 }
 
 /* Описание */
@@ -115,7 +115,7 @@
 }
 
 .add-to-wishlist:hover {
-    border-color: #EF0D22;
+    border-color: #0366E9;
     box-shadow: 0 0 0 3px rgba(239, 13, 34, 0.15);
 }
 

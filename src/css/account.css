@@ -46,7 +46,7 @@
 }
 
 .account-menu li.active a {
-    color: #EF0D22;
+    color: #0366E9;
     font-weight: bold;
 }
 
@@ -105,5 +105,5 @@
 }
 
 .account-menu .icon-active {
-    stroke: #EF0D22; /* активный красный */
+    stroke: #0366E9; /* активный красный */
 }
