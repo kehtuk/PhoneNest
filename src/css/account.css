@@ -1,0 +1,109 @@
+/* Контейнер личного кабинета */
+.account-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Левое меню */
+.account-sidebar {
+    width: 265px;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+/* Имя пользователя */
+.account-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Меню */
+.account-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.account-menu li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.account-menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.account-menu li a img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.account-menu li.active a {
+    color: #EF0D22;
+    font-weight: bold;
+}
+
+/* Контент */
+.account-content {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.account-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 16px;
+}
+
+.user-form input,
+.user-form textarea {
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-form textarea {
+    resize: vertical;
+}
+
+.account-menu .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    stroke: #000; /* базовый цвет */
+    transition: stroke 0.3s ease;
+}
+
+.account-menu .icon-active {
+    stroke: #EF0D22; /* активный красный */
+}

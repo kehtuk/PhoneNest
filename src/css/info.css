@@ -1,0 +1,130 @@
+.info-page {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #FFF;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+}
+
+.breadcrumbs a {
+    text-decoration: underline #929292;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: #EF0D22;
+    text-decoration: underline #EF0D22;
+}
+
+.breadcrumbs span {
+    margin: 0 1px;
+    color: #888;
+}
+
+.breadcrumbs .current {
+    color: #929292;
+}
+
+.info {
+    margin-top: -40px;
+}
+
+.info-content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.info-sidebar {
+    width: 250px;
+    margin-top: 80px;
+    position: sticky;
+    top: 20px;
+    float: right;
+}
+
+.info-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-sidebar li {
+    margin-bottom: 10px;
+}
+
+.info-sidebar a {
+    text-decoration: none;
+    color: #888;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.info-sidebar a:hover, .info-sidebar a:focus {
+    color: #000;
+    font-weight: bold;
+}
+
+.info-content {
+    float: left;
+}
+
+.info-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.info-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.info-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.social-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.social-icons a {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    background-color: #000;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    margin-left: 8px;
+}
+
+.social-icons a:hover {
+    background-color: #EF0D22;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.Telegram {
+    margin-right: 1px;
+}

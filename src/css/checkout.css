@@ -1,0 +1,140 @@
+.checkout-page {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.checkout-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    gap: 40px;
+    flex-wrap: nowrap;
+}
+
+.checkout-form {
+    width: 65%;
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.checkout-form label {
+    display: block;
+    margin: 15px 0 6px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"],
+.checkout-form input[type="tel"],
+.checkout-form input[type="number"],
+.checkout-form textarea,
+.checkout-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.checkout-form textarea {
+    resize: vertical;
+}
+
+.checkout-form input[type="checkbox"],
+.checkout-form input[type="radio"] {
+    margin-right: 8px;
+}
+
+.order-btn {
+    display: block;
+    width: 100%;
+    background-color: #EF0D22;
+    color: #fff;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #c90018;
+}
+
+.checkout-summary {
+    width: 35%;
+    background: #fefefe;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-summary h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price-breakdown p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+.price-breakdown .total {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: contain;
+    background-color: #f9f9f9;
+}
+
+.cart-price {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.cart-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cart-options select,
+.cart-options input[type="number"] {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

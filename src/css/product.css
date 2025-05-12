@@ -1,0 +1,126 @@
+/* Обёртка */
+.product-page {
+    padding: 40px 0;
+    background: #FFF;
+}
+
+/* Контейнер контента */
+.product-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Изображения */
+.product-images {
+    flex: 1 1 40%;
+}
+
+.product-images .main-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+/* Информация о товаре */
+.product-details {
+    flex: 1 1 30%;
+}
+
+.product-details h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 0px;
+}
+
+.product-sku {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    margin: 24px 0;
+}
+
+.product-option {
+    margin: 30px 0;
+}
+
+.product-type {
+    background-color: #F8F8F8;
+    padding: 7px 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+.add-to-cart {
+    background-color: #EF0D22;
+    color: #fff;
+    padding: 16px 56px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #c90018;
+}
+
+/* Описание */
+.product-description {
+    margin-top: 40px;
+}
+
+.product-description h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product-description p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: #333;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.add-to-wishlist {
+    background-color: #fff;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-wishlist:hover {
+    border-color: #EF0D22;
+    box-shadow: 0 0 0 3px rgba(239, 13, 34, 0.15);
+}
+
+.add-to-wishlist img {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}

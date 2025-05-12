@@ -1,0 +1,158 @@
+.admin-catalog {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-top: 30px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.admin-table thead {
+    background: #e5e5e5;
+    font-weight: bold;
+}
+
+.product-thumb {
+    width: 60px;
+    height: auto;
+}
+
+.admin-edit {
+    color: #000;
+    text-decoration: none;
+    border: none;
+    background-color: #FFF;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.admin-delete {
+    color: #000;
+    text-decoration: none;
+    border: none;
+    background-color: #FFF;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.admin-edit:hover,
+.admin-delete:hover {
+    opacity: 0.8;
+    color: #EF0D22;
+}
+
+.admin-button {
+    display: flex;
+    justify-content: right;
+}
+
+.admin-add {
+    background: #EF0D22;
+    color: #FFF;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 800;
+    border: none;
+}
+
+.admin-add:hover {
+    background: #c30016;
+}
+
+.account-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.account-sidebar {
+    width: 265px;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.account-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.account-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.account-menu li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.account-menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.account-menu li a .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    stroke: #000;
+}
+
+.account-menu li.active a {
+    color: #EF0D22;
+    font-weight: bold;
+}
+
+.account-menu li.active a .icon {
+    stroke: #EF0D22;
+}
+
+.account-content {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.account-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}

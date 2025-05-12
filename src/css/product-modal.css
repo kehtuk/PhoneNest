@@ -1,0 +1,88 @@
+.modal-content.edit-modal {
+    background: #FFF;
+    padding: 40px 60px;
+    border-radius: 12px;
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+
+.edit-modal-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px 30px;
+    align-items: center;
+}
+
+.edit-label {
+    font-weight: 600;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.edit-field {
+    padding: 11px 14px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #FFF;
+    border-radius: 6px;
+}
+
+.edit-fields input,
+.edit-fields textarea {
+    width: 100%;
+}
+
+.img-upload {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.preview-image {
+    width: 55px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.upload-btn {
+    background: #EF0D22;
+    color: #FFF;
+    font-size: 14px;
+    padding: 8px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    border: none;
+}
+
+.upload-btn:hover {
+    background: #c90018;
+}
+
+.edit-btn-wrapper {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.modal-button {
+    background: #EF0D22;
+    color: #fff;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.modal-button:hover {
+    background: #c90018;
+}
