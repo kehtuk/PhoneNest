@@ -2,7 +2,7 @@
 session_start();
 
 $host = "localhost";
-$dbname = "stepsup";
+$dbname = "phonenest";
 $username = "root";
 $password = "";
 

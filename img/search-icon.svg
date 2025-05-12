@@ -1,5 +1,20 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M18.32 16.407L22.556 20.643M18.32 16.407C16.8865 17.8405 14.9413 18.646 12.914 18.646C10.8867 18.646 8.94242 17.8407 7.5089 16.4071C6.07537 14.9736 5.27002 13.0293 5.27002 11.002C5.27002 8.97469 6.07537 7.03041 7.5089 5.59688C8.94242 4.16335 10.8867 3.358 12.914 3.358C14.9413 3.358 16.8856 4.16335 18.3191 5.59688C19.7527 7.03041 20.558 8.97469 20.558 11.002C20.558 13.0293 19.7535 14.9735 18.32 16.407Z" stroke="black" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M2.48401 4.358C2.79601 5.15 3.48501 5.774 4.37601 5.966C4.99724 6.09958 5.64586 6.00257 6.20082 5.69307C6.75578 5.38358 7.17918 4.88273 7.39201 4.284" stroke="black" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.39302 4.284H7.39802L14.028 8.978C14.4808 9.30049 14.8295 9.74836 15.0309 10.2665C15.2324 10.7846 15.278 11.3503 15.162 11.894L15.018 12.566L1.89002 9.751L1.67202 8.148L2.48502 4.358M9.17002 5.536L8.71002 7.67M10.878 6.804L10.494 8.592M12.679 8.028L12.357 9.528M1.44702 11.716L14.623 14.544" stroke="black" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.3px;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="_Слой_1" data-name="Слой_1">
+      <path class="cls-1" d="M16.5,16.4l4.2,4.2M16.5,16.4c-1.4,1.4-3.4,2.2-5.4,2.2s-4-.8-5.4-2.2c-1.4-1.4-2.2-3.4-2.2-5.4s.8-4,2.2-5.4c1.4-1.4,3.4-2.2,5.4-2.2s4,.8,5.4,2.2c1.4,1.4,2.2,3.4,2.2,5.4s-.8,4-2.2,5.4Z"/>
+    </g>
+  </g>
 </svg>

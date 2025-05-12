@@ -38,7 +38,7 @@
 
 /* Фильтр */
 .filter {
-    width: 250px;
+    width: 200px;
     background: #fff;
     padding: 15px;
     border-radius: 8px;
@@ -134,7 +134,7 @@
 /* Сетка размеров */
 .size-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 10px;
 }
 

@@ -19,26 +19,20 @@ require './server/products.php';
                 <div class="container">
                     <!-- Слайдер -->
                     <div class="custom-slider">
-                        <div class="slider-track">
-                            <div class="slide"><img src="./img/main-sneakers.jpg" alt="Слайд 1"></div>
-                            <div class="slide"><img src="./img/slide1.jpg" alt="Слайд 2"></div>
-                            <div class="slide"><img src="./img/slide2.jpg" alt="Слайд 3"></div>
-                            <div class="slide"><img src="./img/slide3.jpg" alt="Слайд 4"></div>
-                        </div>
-                        <div class="slider-dots"></div>
+                        <div class="slide"><img src="./img/main-sneakers.jpg" alt="Слайд 1"></div>
                     </div>
 
                     <div class="sneakers-categories">
                         <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/mens-sneakers.jpg" alt="Мужские кроссовки"></div>
+                            <div class="image-wrapper"><img src="./img/" alt="Мужские кроссовки"></div>
                             <div class="overlay">Мужские кроссовки</div>
                         </div>
                         <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/brand-collections.jpg" alt="Брендовые коллекции"></div>
+                            <div class="image-wrapper"><img src="./img/" alt="Брендовые коллекции"></div>
                             <div class="overlay">Брендовые коллекции</div>
                         </div>
                         <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/sale.jpg" alt="Распродажа"></div>
+                            <div class="image-wrapper"><img src="./img/" alt="Распродажа"></div>
                             <div class="overlay">Распродажа</div>
                         </div>
                     </div>
@@ -46,20 +40,12 @@ require './server/products.php';
             </section>
             <section class="shoes-section">
                 <div class="container">
-                    <!-- Фильтр выбора категории -->
-                    <div class="filter-buttons">
-                        <button class="active">Рекомендуем</button>
-                        <button>Популярные</button>
-                        <button>Новинки</button>
-                    </div>
-
-                    <!-- Мужская обувь -->
-                    <h2>Мужская обувь 🡮</h2>
+                    <h2>Хиты продаж 🡮</h2>
                     <div class="product-category">
                         <?php
                         $count = 0;
                         foreach ($products as $product) {
-                            if ((int)$product["gender"] === 1) {
+                            if ($product["category"] === "Хиты") {
                                 if ($count >= 4) break;
                                 $count++;
                         ?>
@@ -80,12 +66,12 @@ require './server/products.php';
                         } ?>
                     </div>
 
-                    <h2>Женская обувь 🡮</h2>
+                    <h2>Новинки 🡮</h2>
                     <div class="product-category">
                         <?php
                         $count = 0;
                         foreach ($products as $product) {
-                            if ((int)$product["gender"] === 0) {
+                            if ($product["category"] === "Новинки") {
                                 if ($count >= 4) break;
                                 $count++;
                         ?>
@@ -105,6 +91,7 @@ require './server/products.php';
                         <?php }
                         } ?>
                     </div>
+
                 </div>
             </section>
         </main>

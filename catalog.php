@@ -8,12 +8,24 @@ $priceMin = (isset($_GET['price_min']) && $_GET['price_min'] !== '') ? (float)$_
 $priceMax = (isset($_GET['price_max']) && $_GET['price_max'] !== '') ? (float)$_GET['price_max'] : null;
 $category = $_GET['category'] ?? null;
 $selectedBrands = $_GET['brands'] ?? [];
-$size = $_GET['size'] ?? null;
-$gender = $_GET['gender'] ?? null;
+$ram = $_GET['ram'] ?? null;
+$storage = $_GET['storage'] ?? null;
+$resolution = $_GET['screen_resolution'] ?? null;
+$sim = $_GET['sim_type'] ?? null;
+$network = $_GET['network'] ?? null;
+$color = $_GET['color'] ?? null;
+$screenSize = $_GET['screen_size'] ?? null;
 
 // Получение всех брендов из базы данных
 $brandStmt = $pdo->query("SELECT DISTINCT brand FROM products ORDER BY brand ASC");
 $allBrands = $brandStmt->fetchAll(PDO::FETCH_COLUMN);
+$ramOptions = $pdo->query("SELECT DISTINCT ram FROM products WHERE ram IS NOT NULL AND ram != '' ORDER BY ram")->fetchAll(PDO::FETCH_COLUMN);
+$storageOptions = $pdo->query("SELECT DISTINCT storage FROM products WHERE storage IS NOT NULL AND storage != '' ORDER BY storage")->fetchAll(PDO::FETCH_COLUMN);
+$resolutionOptions = $pdo->query("SELECT DISTINCT screen_resolution FROM products WHERE screen_resolution IS NOT NULL AND screen_resolution != '' ORDER BY screen_resolution")->fetchAll(PDO::FETCH_COLUMN);
+$simOptions = $pdo->query("SELECT DISTINCT sim_type FROM products WHERE sim_type IS NOT NULL AND sim_type != '' ORDER BY sim_type")->fetchAll(PDO::FETCH_COLUMN);
+$networkOptions = $pdo->query("SELECT DISTINCT network FROM products WHERE network IS NOT NULL AND network != '' ORDER BY network")->fetchAll(PDO::FETCH_COLUMN);
+$colorOptions = $pdo->query("SELECT DISTINCT color FROM products WHERE color IS NOT NULL AND color != '' ORDER BY color")->fetchAll(PDO::FETCH_COLUMN);
+$screenSizes = $pdo->query("SELECT DISTINCT screen_size FROM products WHERE screen_size IS NOT NULL AND screen_size != '' ORDER BY screen_size ASC")->fetchAll(PDO::FETCH_COLUMN);
 
 $query = "SELECT * FROM products WHERE 1";
 $params = [];
@@ -41,16 +53,46 @@ if (!empty($selectedBrands)) {
     $params = array_merge($params, $selectedBrands);
 }
 
-// Фильтрация по размеру
-if (!empty($size)) {
-    $query .= " AND size = ?";
-    $params[] = $size;
+// Фильтрация по остальным параметрам
+if (!empty($ram) && is_array($ram)) {
+    $placeholders = implode(',', array_fill(0, count($ram), '?'));
+    $query .= " AND ram IN ($placeholders)";
+    $params = array_merge($params, $ram);
 }
 
-// Фильтрация по полу
-if ($gender !== null && $gender !== '') {
-    $query .= " AND gender = ?";
-    $params[] = $gender;
+if (!empty($storage) && is_array($storage)) {
+    $placeholders = implode(',', array_fill(0, count($storage), '?'));
+    $query .= " AND storage IN ($placeholders)";
+    $params = array_merge($params, $storage);
+}
+
+if (!empty($resolution) && is_array($resolution)) {
+    $placeholders = implode(',', array_fill(0, count($resolution), '?'));
+    $query .= " AND screen_resolution IN ($placeholders)";
+    $params = array_merge($params, $resolution);
+}
+
+if (!empty($sim) && is_array($sim)) {
+    $placeholders = implode(',', array_fill(0, count($sim), '?'));
+    $query .= " AND sim_type IN ($placeholders)";
+    $params = array_merge($params, $sim);
+}
+
+if (!empty($network) && is_array($network)) {
+    $placeholders = implode(',', array_fill(0, count($network), '?'));
+    $query .= " AND network IN ($placeholders)";
+    $params = array_merge($params, $network);
+}
+
+if (!empty($color) && is_array($color)) {
+    $placeholders = implode(',', array_fill(0, count($color), '?'));
+    $query .= " AND color IN ($placeholders)";
+    $params = array_merge($params, $color);
+}
+
+if (!empty($screenSize)) {
+    $query .= " AND screen_size = ?";
+    $params[] = $screenSize;
 }
 
 // Поиск по имени и описанию
@@ -59,6 +101,13 @@ if (!empty($queryText)) {
     $searchTerm = '%' . $queryText . '%';
     $params[] = $searchTerm;
     $params[] = $searchTerm;
+}
+
+// Сортировка по дате поступления
+if ($order === 'old') {
+    $query .= " ORDER BY created_at ASC";
+} else {
+    $query .= " ORDER BY created_at DESC";
 }
 
 // Получение товаров
@@ -99,7 +148,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <aside class="filter">
                         <form method="GET">
                             <!-- Бренды -->
-                            <h2 class="filter-title">Бренды</h2>
+                            <h2 class="filter-title">Производитель</h2>
                             <ul class="filter-list">
                                 <?php foreach ($allBrands as $brand): ?>
                                     <li>
@@ -112,22 +161,89 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php endforeach; ?>
                             </ul>
 
-                            <!-- Категория -->
-                            <h2 class="filter-title">Категория</h2>
-                            <select class="filter-select" name="category">
-                                <option value="">Все</option>
-                                <option value="Бренд" <?= $category === 'Бренд' ? 'selected' : '' ?>>Бренд</option>
-                                <option value="Распродажа" <?= $category === 'Распродажа' ? 'selected' : '' ?>>Распродажа</option>
-                                <option value="Детская" <?= $category === 'Детская' ? 'selected' : '' ?>>Детская</option>
-                            </select>
+                            <!-- Оперативная память -->
+                            <h2 class="filter-title">Оперативная память</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($ramOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="ram[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($ram) && in_array($option, $ram) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
 
-                             <!-- Пол -->
-                             <h2 class="filter-title">Пол</h2>
-                            <select class="filter-select" name="gender">
-                                <option value="">Все</option>
-                                <option value="1" <?= $gender === '1' ? 'selected' : '' ?>>Мужской</option>
-                                <option value="0" <?= $gender === '0' ? 'selected' : '' ?>>Женский</option>
-                            </select>
+                            <!-- Встроенная память -->
+                            <h2 class="filter-title">Встроенная память</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($storageOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="storage[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($storage) && in_array($option, $storage) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                            <!-- Разрешение экрана -->
+                            <h2 class="filter-title">Разрешение экрана</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($resolutionOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="screen_resolution[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($resolution) && in_array($option, $resolution) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                            <!-- Тип SIM-карты -->
+                            <h2 class="filter-title">Тип SIM-карты</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($simOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="sim_type[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($sim) && in_array($option, $sim) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                            <!-- Модуль связи -->
+                            <h2 class="filter-title">Модуль связи</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($networkOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="network[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($network) && in_array($option, $network) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+
+                            <!-- Цвет -->
+                            <h2 class="filter-title">Цвет</h2>
+                            <ul class="filter-list">
+                                <?php foreach ($colorOptions as $option): ?>
+                                    <li>
+                                        <label>
+                                            <input type="checkbox" name="color[]" value="<?= htmlspecialchars($option) ?>"
+                                                <?= is_array($color) && in_array($option, $color) ? 'checked' : '' ?>>
+                                            <?= htmlspecialchars($option) ?>
+                                        </label>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
 
                             <!-- Цена -->
                             <h2 class="filter-title">Цена</h2>
@@ -143,23 +259,20 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <!-- Скрытый параметр сортировки -->
                             <input type="hidden" name="order" value="<?= htmlspecialchars($order) ?>">
 
-                            <!-- Размеры (пока статичны) -->
-                            <h2 class="filter-title">Размер EUR</h2>
+                            <!-- Диагональ экрана -->
+                            <h2 class="filter-title">Размер экрана</h2>
                             <div class="size-grid">
-                                <?php 
-                                    $sizes = ['36','37','38','39','40','41','42','43','44','45'];
-                                    foreach ($sizes as $s): 
-                                ?>
+                                <?php foreach ($screenSizes as $s): ?>
                                     <button 
                                         type="button" 
-                                        class="size-btn <?= ($size === $s) ? 'active' : '' ?>" 
-                                        data-size="<?= $s ?>"
+                                        class="size-btn <?= ($screenSize === $s) ? 'active' : '' ?>" 
+                                        data-screen="<?= htmlspecialchars($s) ?>"
                                     >
-                                        <?= $s ?>
+                                        <?= htmlspecialchars($s) ?>
                                     </button>
                                 <?php endforeach; ?>
                             </div>
-                            <input type="hidden" name="size" id="sizeInput" value="<?= htmlspecialchars($size ?? '') ?>">
+                            <input type="hidden" name="screen_size" id="screenSizeInput" value="<?= htmlspecialchars($screenSize ?? '') ?>">
 
                             <!-- Применить -->
                             <button type="submit" class="filter-submit">Применить</button>
@@ -197,19 +310,17 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <script>
-    document.querySelectorAll('.size-btn').forEach(btn => {
+    document.querySelectorAll('.size-btn[data-screen]').forEach(btn => {
         btn.addEventListener('click', () => {
-            const sizeInput = document.getElementById('sizeInput');
+            const input = document.getElementById('screenSizeInput');
 
-            // Если кнопка уже активна — снять выбор
             if (btn.classList.contains('active')) {
                 btn.classList.remove('active');
-                sizeInput.value = '';
+                input.value = '';
             } else {
-                // Убрать активность у всех, установить новую
-                document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.size-btn[data-screen]').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                sizeInput.value = btn.dataset.size;
+                input.value = btn.dataset.screen;
             }
         });
     });

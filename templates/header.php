@@ -34,7 +34,7 @@ if (isset($_SESSION['cart'])) {
                     <li><a href="contacts.php">Контакты</a></li>
                 </ul>
             </div>
-            <div class="logo"><a href="/index.php"><img src="/img/logo.svg" alt="logo"></a></div>
+            <div class="logo"><a href="/index.php">PhoneNest</a></div>
             <div class="header-icons">
                 <ul>
                     <li><a href="#" id="openSearchModal"><img src="/img/search-icon.svg" alt="Поиск"></a></li>
@@ -68,12 +68,12 @@ if (isset($_SESSION['cart'])) {
 
         <nav class="header-categories">
             <ul>
+                <li><a href="/catalog.php?category=Хиты">Хиты</a></li>
                 <li><a href="/catalog.php?category=Новинки">Новинки</a></li>
-                <li><a href="/catalog.php?category=Бренд">Бренды</a></li>
-                <li><a href="/catalog.php?gender=1">Мужские</a></li>
-                <li><a href="/catalog.php?gender=0">Женские</a></li>
-                <li><a href="/catalog.php?category=Детская">Детские</a></li>
-                <li><a href="/catalog.php?category=Распродажа">Распродажа</a></li>
+                <li><a href="/catalog.php?brands[]=Apple">iPhone</a></li>
+                <li><a href="/catalog.php?brands[]=Realme">Realme</a></li>
+                <li><a href="/catalog.php?brands[]=Samsung">Samsung</a></li>
+                <li><a href="/catalog.php?category=Акции">Акции</a></li>
             </ul>
         </nav>
     </div>
