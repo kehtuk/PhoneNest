@@ -4,8 +4,6 @@ require 'db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["id"])) {
     $id = (int) $_POST["id"];
 
-    // Можно также сначала получить и удалить файл изображения (опционально)
-
     $stmt = $pdo->prepare("DELETE FROM products WHERE id = ?");
     $success = $stmt->execute([$id]);
 

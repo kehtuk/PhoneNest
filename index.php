@@ -15,29 +15,6 @@ require './server/products.php';
     <div class="wrapper">
         <?php include './templates/header.php'; ?>
         <main class="content">
-            <section class="category-section">
-                <div class="container">
-                    <!-- Слайдер -->
-                    <div class="custom-slider">
-                        <div class="slide"><img src="./img/main-sneakers.jpg" alt="Слайд 1"></div>
-                    </div>
-
-                    <div class="sneakers-categories">
-                        <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/" alt="Мужские кроссовки"></div>
-                            <div class="overlay">Мужские кроссовки</div>
-                        </div>
-                        <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/" alt="Брендовые коллекции"></div>
-                            <div class="overlay">Брендовые коллекции</div>
-                        </div>
-                        <div class="category-item">
-                            <div class="image-wrapper"><img src="./img/" alt="Распродажа"></div>
-                            <div class="overlay">Распродажа</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section class="shoes-section">
                 <div class="container">
                     <h2>Хиты продаж 🡮</h2>
@@ -53,7 +30,7 @@ require './server/products.php';
                                 <?php if (!empty($product["label"])) { ?>
                                     <span class="label"><?= htmlspecialchars($product["label"]) ?></span>
                                 <?php } ?>
-                                <img src="<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
+                                <img src="./img/<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
                                 <p class="price"><?= number_format($product["price"], 2, '.', ' ') ?> руб.</p>
                                 <div class="product-name">
                                     <p><?= htmlspecialchars($product["description"]) ?></p>
@@ -79,7 +56,9 @@ require './server/products.php';
                                 <?php if (!empty($product["label"])) { ?>
                                     <span class="label"><?= htmlspecialchars($product["label"]) ?></span>
                                 <?php } ?>
-                                <img src="<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
+                                <div class="product-image">
+                                    <img src="./img/<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
+                                </div>
                                 <p class="price"><?= number_format($product["price"], 2, '.', ' ') ?> руб.</p>
                                 <div class="product-name">
                                     <p><?= htmlspecialchars($product["description"]) ?></p>

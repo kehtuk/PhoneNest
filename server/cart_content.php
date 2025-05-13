@@ -18,11 +18,10 @@ if (!empty($_SESSION['cart'])) {
         $total += $product['price'] * $quantity;
         ?>
         <div class="cart-item" style="position: relative;">
-            <img src="<?= htmlspecialchars($product['image']) ?>" class="cart-item__image" alt="<?= htmlspecialchars($product['name']) ?>">
+            <img src="/img/<?= htmlspecialchars($product["image"]) ?>" class="cart-item__image" alt="<?= htmlspecialchars($product['name']) ?>">
             <div class="cart-item__info">
                 <h3 class="cart-item__title"><?= htmlspecialchars($product['name']) ?></h3>
                 <p class="cart-item__price"><?= number_format($product['price'], 0, '', ' ') ?> ₽</p>
-                <p class="cart-item__size">41 1/3 EUR</p>
             </div>
             <button class="remove-from-cart" data-sku="<?= htmlspecialchars($product['sku']) ?>" title="Удалить товар"
                 style="background: none; border: none; position: absolute; top: 12px; right: 12px; cursor: pointer;">

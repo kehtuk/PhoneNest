@@ -103,13 +103,6 @@ if (!empty($queryText)) {
     $params[] = $searchTerm;
 }
 
-// Сортировка по дате поступления
-if ($order === 'old') {
-    $query .= " ORDER BY created_at ASC";
-} else {
-    $query .= " ORDER BY created_at DESC";
-}
-
 // Получение товаров
 $stmt = $pdo->prepare($query);
 $stmt->execute($params);
@@ -138,9 +131,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <form method="GET" class="sort-form">
                     <h1 class="sort-title">КАТАЛОГ</h1>
-                    <button class="sort-btn" type="submit" name="order" value="<?= $order === 'new' ? 'old' : 'new' ?>">
-                        Дата поступления (<?= $order === 'new' ? 'сначала старые' : 'сначала новые' ?>)
-                    </button>
                 </form>
 
                 <div class="catalog-wrapper">
@@ -287,7 +277,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <?php if (!empty($product["label"])): ?>
                                         <span class="label"><?= htmlspecialchars($product["label"]) ?></span>
                                     <?php endif; ?>
-                                    <img src="<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
+                                    <div class="product-image">
+                                        <img src="./img/<?= htmlspecialchars($product["image"]) ?>" alt="<?= htmlspecialchars($product["name"]) ?>">
+                                    </div>
                                     <p class="price"><?= number_format($product["price"], 2, '.', ' ') ?> руб.</p>
                                     <div class="product-name">
                                         <p><?= htmlspecialchars($product["description"]) ?></p>

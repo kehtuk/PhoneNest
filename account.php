@@ -93,7 +93,7 @@ $tab = $_GET['tab'] ?? 'orders';
                                 <input type="email" id="email" name="email" disabled value="<?= htmlspecialchars($user['email']) ?>">
 
                                 <label for="phone">Телефон</label>
-                                <input type="tel" id="phone" name="phone" value="<?= htmlspecialchars($user['phone'] ?? '') ?>">
+                                <input type="tel" id="phone" name="phone" disabled value="<?= htmlspecialchars($user['phone'] ?? '') ?>">
 
                                 <label for="address">Адрес</label>
                                 <textarea id="address" name="address" rows="3"><?= htmlspecialchars($user['address'] ?? '') ?></textarea>

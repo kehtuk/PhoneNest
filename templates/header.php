@@ -71,8 +71,8 @@ if (isset($_SESSION['cart'])) {
                 <li><a href="/catalog.php?category=Хиты">Хиты</a></li>
                 <li><a href="/catalog.php?category=Новинки">Новинки</a></li>
                 <li><a href="/catalog.php?brands[]=Apple">iPhone</a></li>
-                <li><a href="/catalog.php?brands[]=Realme">Realme</a></li>
                 <li><a href="/catalog.php?brands[]=Samsung">Samsung</a></li>
+                <li><a href="/catalog.php?brands[]=Xiaomi">Xiaomi</a></li>
                 <li><a href="/catalog.php?category=Акции">Акции</a></li>
             </ul>
         </nav>

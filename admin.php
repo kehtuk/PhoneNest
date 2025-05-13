@@ -96,14 +96,9 @@ if ($tab === 'orders') {
                                         <th>Название</th>
                                         <th>Цена</th>
                                         <th>Категория</th>
-                                        <th>Статус заказа</th>
-                                        <th>Статус оплаты</th>
+                                        <th>Бренд</th>
                                         <th></th>
-                                        <th>
-                                            <div class="admin-button">
-                                                <button class="admin-add">+</button>
-                                            </div>
-                                        </th>
+                                        <th><div class="admin-button"><button class="admin-add">+</button></div></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -113,37 +108,29 @@ if ($tab === 'orders') {
                                     if (in_array($product['sku'], $shownSkus)) continue;
                                     $shownSkus[] = $product['sku'];
                                 ?>
-                                    <tr>
-                                        <td><img src="<?= $product['image'] ?>" alt="Товар" class="product-thumb"></td>
-                                        <td><?= htmlspecialchars($product['name']) ?></td>
-                                        <td><?= number_format($product['price'], 2, '.', ' ') ?> руб.</td>
-                                        <td><?= $product['category']?></td>
-                                        <td><?= $product['order_status'] ?></td>
-                                        <td><?= $product['payment_status'] ?></td>
-                                        <td>
-                                            <button class="admin-edit"
-                                                data-id="<?= $product['id'] ?>"
-                                                data-sku="<?= $product['sku'] ?>"
-                                                data-name="<?= htmlspecialchars($product['name']) ?>"
-                                                data-description="<?= htmlspecialchars($product['description']) ?>"
-                                                data-price="<?= $product['price'] ?>"
-                                                data-stock="<?= $product['stock'] ?>"
-                                                data-category="<?= $product['category'] ?>"
-                                                data-image="<?= $product['image'] ?>"
-                                                data-orderstatus="<?= $product['order_status'] ?>"
-                                                data-paymentstatus="<?= $product['payment_status'] ?>">
-                                                ✎
-                                            </button>
-                                        </td>
-                                        <input type="hidden" name="id" value="<?= $product['id'] ?>">
-                                                <td>
-                                                    <button 
-                                                        class="admin-delete" 
-                                                        data-id="<?= $product['id'] ?>"
-                                                        title="Удалить товар"
-                                                    >✖</button>
-                                                </td>
-                                    </tr>
+                                <tr>
+                                    <td><img src="/img/<?= htmlspecialchars($product["image"]) ?>" alt="Товар" class="product-thumb"></td>
+                                    <td><?= htmlspecialchars($product['name']) ?></td>
+                                    <td><?= number_format($product['price'], 2, '.', ' ') ?> руб.</td>
+                                    <td><?= $product['category'] ?></td>
+                                    <td><?= $product['brand'] ?></td>
+                                    <td>
+                                        <button class="admin-edit"
+                                            data-id="<?= $product['id'] ?>"
+                                            data-sku="<?= $product['sku'] ?>"
+                                            data-name="<?= htmlspecialchars($product['name']) ?>"
+                                            data-description="<?= htmlspecialchars($product['description']) ?>"
+                                            data-price="<?= $product['price'] ?>"
+                                            data-stock="<?= $product['stock'] ?>"
+                                            data-brand="<?= $product['brand'] ?>"
+                                            data-category="<?= $product['category'] ?>"
+                                            data-image="<?= $product['image'] ?>"
+                                        >✎</button>
+                                    </td>
+                                    <td>
+                                        <button class="admin-delete" data-id="<?= $product['id'] ?>" title="Удалить товар">✖</button>
+                                    </td>
+                                </tr>
                                 <?php endforeach; ?>
                                 </tbody>
                             </table>

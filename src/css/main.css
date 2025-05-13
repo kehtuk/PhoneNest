@@ -142,6 +142,8 @@ h2 {
 
 .product-card img {
     width: 100%;
+    max-width: 256px;
+    max-height: 342px;
     height: auto;
     border-radius: 5px;
 }
@@ -162,6 +164,10 @@ h2 {
     font-size: 14px;
     color: #333;
     margin-bottom: 15px;
+}
+
+.product-image {
+    height: 350px;
 }
 
 .details-container {

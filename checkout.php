@@ -70,7 +70,7 @@ if (!empty($_SESSION['user_id'])) {
                 <h2>Оформите заказ</h2>
                 <form action="/server/place_order.php" method="POST">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com"
+                    <input type="email" id="email" name="email" disabled placeholder="you@example.com"
                         value="<?= $userData['email'] ?>" required>
 
                     <label for="fullname">ФИО</label>
@@ -79,21 +79,11 @@ if (!empty($_SESSION['user_id'])) {
 
 
                     <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 900 000 00 00"
+                    <input id="phone" type="tel" name="phone" placeholder="+7 900 000 00 00"
                         value="<?= $userData['phone'] ?>" required>
 
                     <label for="address">Адрес</label>
-                    <input type="text" id="address" name="address" placeholder="г. Москва"
-                        value="<?= $userData['address'] ?>" required>
-
-                    <label>
-                        <input type="checkbox" name="international"> За границу
-                    </label>
-
-                    <p>Выберите способ доставки</p>
-                    <label><input type="radio" name="delivery" value="pickup" checked> Забрать из магазина — Бесплатно</label>
-                    <label><input type="radio" name="delivery" value="courier"> Курьер Sneakerhead — 1–3 дня (500 ₽)</label>
-                    <label><input type="radio" name="delivery" value="boxberry"> ПВЗ Boxberry — 3–6 дней (350 ₽)</label>
+                    <input type="text" id="address" name="address" placeholder="г. Москва" value="<?= $userData['address'] ?>" required>
 
                     <label for="comment">Комментарий к заказу</label>
                     <textarea name="comment" id="comment" rows="4" placeholder="Комментарий к заказу..."></textarea>
@@ -111,7 +101,6 @@ if (!empty($_SESSION['user_id'])) {
 
                 <div class="price-breakdown">
                     <p>Стоимость товаров <span><?= number_format($total, 0, '', ' ') ?> ₽</span></p>
-                    <p>Доставка <span>0 ₽</span></p>
                     <p class="total">Итого <span><?= number_format($total, 0, '', ' ') ?> ₽</span></p>
                 </div>
 
@@ -123,9 +112,6 @@ if (!empty($_SESSION['user_id'])) {
                                 <p class="cart-price"><?= number_format($item['price'], 0, '', ' ') ?> ₽</p>
                                 <p><?= htmlspecialchars($item['name']) ?></p>
                                 <div class="cart-options">
-                                    <select>
-                                        <option selected>41 1/3 EUR</option>
-                                    </select>
                                     <input type="number" value="<?= $item['quantity'] ?>" min="1" readonly>
                                 </div>
                             </div>
