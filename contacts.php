@@ -32,14 +32,14 @@
                         <section id="address">
                             <h2>Наш адрес</h2>
                             <p>Главный офис и склад</p>
-                            <p>г. Москва, ул. Примерная, д. 15, офис 305</p>
+                            <p>г. Москва, ул. Солнцево, д. 7, офис 7</p>
                         </section>
                         
                         <section id="schedule">
                             <h2>Режим работы</h2>
                             <p>Мы работаем:</p>
                             <ul>
-                                <li>Понедельник – Пятница: 10:00 – 18:00</li>
+                                <li>Понедельник – Пятница: 10:00 – 19:00</li>
                                 <li>Суббота – Воскресенье: выходные</li>
                             </ul>
                             <p>Обратите внимание, что заказы, оформленные в выходные или праздничные дни, будут обработаны в ближайший рабочий день.</p>
@@ -49,11 +49,11 @@
                             <h2>Контакты для связи с нами</h2>
                             <p><strong>Электронная почта:</strong></p>
                             <ul>
-                                <li>Для общих вопросов: <a href="mailto:info@stepsup.ru">info@stepsup.ru</a></li>
-                                <li>Для возвратов и обменов: <a href="mailto:returns@stepsup.ru">returns@stepsup.ru</a></li>
+                                <li>Для общих вопросов: <a href="mailto:info@phonenest.ru">info@phonenest.ru</a></li>
+                                <li>Для возвратов и обменов: <a href="mailto:returns@phonenest.ru">returns@phonenest.ru</a></li>
                             </ul>
-                            <p><strong>Телефон (пн – пт с 10:00 до 18:00):</strong></p>
-                            <p>+7 (945) 935-82-82</p>
+                            <p><strong>Телефон (пн – пт с 10:00 до 19:00):</strong></p>
+                            <p>+7 (777) 777-77-77</p>
                             <p><strong>Социальные сети:</strong></p>
                             <div class="social-icons">
                                 <a href="#"><img src="./img/telegram-icon-white.svg" class="Telegram" alt="Telegram"></a>

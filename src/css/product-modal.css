@@ -9,11 +9,30 @@
     margin: auto;
 }
 
-.edit-modal-grid {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 18px 30px;
-    align-items: center;
+.edit-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.edit-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edit-columns-3 {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.edit-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .edit-label {

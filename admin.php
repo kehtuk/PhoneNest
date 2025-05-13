@@ -122,9 +122,24 @@ if ($tab === 'orders') {
                                             data-description="<?= htmlspecialchars($product['description']) ?>"
                                             data-price="<?= $product['price'] ?>"
                                             data-stock="<?= $product['stock'] ?>"
-                                            data-brand="<?= $product['brand'] ?>"
                                             data-category="<?= $product['category'] ?>"
+                                            data-brand="<?= $product['brand'] ?>"
                                             data-image="<?= $product['image'] ?>"
+
+                                            data-screen_size="<?= $product['screen_size'] ?>"
+                                            data-screen_resolution="<?= $product['screen_resolution'] ?>"
+                                            data-ram="<?= $product['ram'] ?>"
+                                            data-storage="<?= $product['storage'] ?>"
+                                            data-battery="<?= $product['battery_capacity'] ?>"
+                                            data-os="<?= $product['os'] ?>"
+                                            data-camera_main="<?= $product['camera_main'] ?>"
+                                            data-camera_front="<?= $product['camera_front'] ?>"
+                                            data-cpu="<?= $product['cpu'] ?>"
+                                            data-sim="<?= $product['sim_type'] ?>"
+                                            data-network="<?= $product['network'] ?>"
+                                            data-weight="<?= $product['weight'] ?>"
+                                            data-dimensions="<?= $product['dimensions'] ?>"
+                                            data-color="<?= $product['color'] ?>"
                                         >✎</button>
                                     </td>
                                     <td>

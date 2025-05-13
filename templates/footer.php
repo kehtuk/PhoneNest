@@ -4,7 +4,7 @@
             <p>&copy; 2025 Магазин PhoneNest</p>
         </div>
         <div class="footer-center">
-            <p>+7 (945) 935-82-82</p>
+            <p>+7 (777) 777-77-77</p>
             <p>order@phonenest.ru</p>
         </div>
         <div class="footer-right">

@@ -2,25 +2,64 @@
 require 'db.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Получение всех полей
+    $sku = $_POST["sku"] ?? '';
     $name = $_POST["name"] ?? '';
     $description = $_POST["description"] ?? '';
     $price = $_POST["price"] ?? 0;
     $brand = $_POST["brand"] ?? '';
-    $category = $_POST["category"] ?? 0;
+    $category = $_POST["category"] ?? '';
     $stock = $_POST["stock"] ?? 0;
+    $screen_size = $_POST["screen_size"] ?? '';
+    $screen_resolution = $_POST["screen_resolution"] ?? '';
+    $ram = $_POST["ram"] ?? '';
+    $storage = $_POST["storage"] ?? '';
+    $battery_capacity = $_POST["battery_capacity"] ?? '';
+    $os = $_POST["os"] ?? '';
+    $camera_main = $_POST["camera_main"] ?? '';
+    $camera_front = $_POST["camera_front"] ?? '';
+    $cpu = $_POST["cpu"] ?? '';
+    $sim_type = $_POST["sim_type"] ?? '';
+    $network = $_POST["network"] ?? '';
+    $weight = $_POST["weight"] ?? '';
+    $dimensions = $_POST["dimensions"] ?? '';
+    $color = $_POST["color"] ?? '';
+    
+    // Загрузка изображения
     $image = '';
-
-    // Upload image
     if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
-        $uploadDir = "../img/";
         $image = basename($_FILES["image"]["name"]);
-        move_uploaded_file($_FILES["image"]["tmp_name"], $uploadDir . $image);
+        $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/img/';
+        $targetPath = $uploadDir . $image;
+
+        // Проверка и создание папки, если нужно
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath);
     }
 
-    $stmt = $pdo->prepare("INSERT INTO products (name, description, price, brand, category, image, stock) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$name, $description, $price, $brand, $category, $image, $stock]);
+    // Вставка в БД
+    $stmt = $pdo->prepare("
+        INSERT INTO products (
+            sku, name, description, price, brand, category, image, stock, 
+            screen_size, screen_resolution, ram, storage, battery_capacity, 
+            os, camera_main, camera_front, cpu, sim_type, network, weight, 
+            dimensions, color
+        ) VALUES (
+            ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+        )
+    ");
 
-    header("Location: ../admin.php");
+    $stmt->execute([
+        $sku, $name, $description, $price, $brand, $category,
+        $image, $stock, $screen_size, $screen_resolution, $ram,
+        $storage, $battery_capacity, $os, $camera_main, $camera_front,
+        $cpu, $sim_type, $network, $weight, $dimensions, $color
+    ]);
+    
+    header("Location: ../admin.php?tab=products");
     exit;
 }
 ?>
